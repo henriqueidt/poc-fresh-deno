@@ -1,17 +1,14 @@
-# Fresh project
+# POC FRESH DENO
 
-Your new Fresh project is ready to go. You can follow the Fresh "Getting
-Started" guide here: https://fresh.deno.dev/docs/getting-started
 
-### Usage
+## Static rendering
 
-Make sure to install Deno:
-https://docs.deno.com/runtime/getting_started/installation
+Fresh is static by default, which means everything is server-side rendered and static on the client (no JS is shipped to the client)
 
-Then start the project in development mode:
+## Islands
 
-```
-deno task dev
-```
+Islands are components that allow user interaction and therefore require JS in the client
 
-This will watch the project directory and restart as necessary.
+Any component added to the `islands` folder will automatically be an interactive island
+
+Components out of the `islands` are "optionally" interactive. For example, if we add our [Button](./islands/Button.tsx) into the index page, even if we pass onClick props, it will be ignored

@@ -2,6 +2,7 @@ import { useSignal } from "@preact/signals";
 import { Head } from "fresh/runtime";
 import { define } from "../utils.ts";
 import Counter from "../islands/Counter.tsx";
+import { Button } from "../components/Button.tsx";
 
 export default define.page(function Home(ctx) {
   const count = useSignal(3);
@@ -27,6 +28,10 @@ export default define.page(function Home(ctx) {
           <code class="mx-2">./routes/index.tsx</code> file, and refresh.
         </p>
         <Counter count={count} />
+        {/* The onClick prop will be ignored, as this is not an interactive island */}
+        <Button onClick={() => console.log("This is not and island")}>
+          Click me!
+        </Button>
       </div>
     </div>
   );
