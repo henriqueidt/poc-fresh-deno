@@ -28,7 +28,17 @@ export default define.page(function Home(ctx) {
           <code class="mx-2">./routes/index.tsx</code> file, and refresh.
         </p>
         <Counter count={count} />
-        {/* The onClick prop will be ignored, as this is not an interactive island */}
+
+        <p>
+          The count below will only render initial signal value as static
+          content and wont update, as it's not inside an island
+        </p>
+        <div class="text-2xl">{count}</div>
+
+        <p>
+          The onClick prop of the button below will be ignored, as this is not
+          an interactive island
+        </p>
         <Button onClick={() => console.log("This is not and island")}>
           Click me!
         </Button>
